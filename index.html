@@ -189,10 +189,10 @@
             const text = e.target.innerText
             if (text === 'Enter FullScreen') {
               console.log(`%cqin clicked item ${text}`, 'color: red;')
-              document.documentElement.requestFullscreen()
+              ;(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen)()
             } else {
               console.log(`%cqin clicked item ${text}`, 'color: blue;')
-              document.exitFullscreen()
+              ;(document.exitFullscreen || document.webkitExitFullscreen)()
             }
           })
         })
