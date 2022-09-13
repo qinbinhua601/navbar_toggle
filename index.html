@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouseleave detect</title>
+    <!-- <script src="./js/lodash.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      p {
+        font-size: 32px;
+        text-indent: 2em;
+      }
+      .container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 54px;
+        background-color: red;
+        opacity: 1;
+        transition: opacity 0.5s linear;
+        display: flex;
+        justify-content: space-between;
+      }
+      .container.hidden {
+        opacity: 0;
+      }
+      button {
+        display: block;
+        width: 100px;
+        outline: none;
+        border: none;
+      }
+      button:hover {
+        background-color: blue;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="left">left</button>
+      <button class="right">right</button>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <script>
+      function init() {
+        function onMouseEnterHandler(e) {
+          console.log('qin', 'onMouseEnterHandler')
+          $container.classList.remove('hidden')
+          debounedOnMouseLeaveHandler?.cancel()
+        }
+        function onMouseLeaveHandler() {
+          console.log('qin', 'onMouseLeaveHandler')
+          $container.classList.add('hidden')
+        }
+        const $container = document.querySelector('.container')
+        const debounedOnMouseLeaveHandler = _.debounce(
+          onMouseLeaveHandler,
+          2000
+        )
+        $container.addEventListener('mouseenter', onMouseEnterHandler)
+        $container.addEventListener('mouseleave', debounedOnMouseLeaveHandler)
+        debounedOnMouseLeaveHandler()
+        bindButtons()
+      }
+      function bindButtons() {
+        document.querySelectorAll('button').forEach(item => {
+          item.addEventListener('click', (e) => {
+            const text = e.target.innerText
+            if (text === 'left') {
+              console.log(`%cqin clicked item ${text}`,'color: red;')
+            } else {
+              console.log(`%cqin clicked item ${text}`,'color: blue;')
+            }
+          })
+        })
+      }
+      init()
+    </script>
+  </body>
+</html>
