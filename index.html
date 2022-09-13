@@ -183,16 +183,18 @@
         debounedOnMouseLeaveHandler()
         bindButtons()
       }
+      const requestFullscreen = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen
+      const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen
       function bindButtons() {
         document.querySelectorAll('button').forEach((item) => {
           item.addEventListener('click', (e) => {
             const text = e.target.innerText
             if (text === 'Enter FullScreen') {
               console.log(`%cqin clicked item ${text}`, 'color: red;')
-              ;(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen)()
+              requestFullscreen.apply(document.documentElement)
             } else {
               console.log(`%cqin clicked item ${text}`, 'color: blue;')
-              ;(document.exitFullscreen || document.webkitExitFullscreen)()
+              exitFullscreen.apply(document)
             }
           })
         })
