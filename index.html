@@ -12,6 +12,9 @@
       body {
         margin: 0;
       }
+      body {
+        padding-top: var(--nav-bar-height, 54px);
+      }
       p {
         font-size: 32px;
         text-indent: 2em;
@@ -20,19 +23,22 @@
         position: fixed;
         top: 0;
         width: 100%;
-        height: 54px;
-        background-color: red;
+        height: var(--nav-bar-height, 54px);
+        background-color: #fff;
+        border: 1px solid red;
         opacity: 1;
-        transition: opacity 0.5s linear;
+        transition: opacity 0.3s ease-in-out;
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
       .container.hidden {
         opacity: 0;
       }
       button {
         display: block;
-        width: 100px;
+        width: 150px;
+        height: 100%;
         outline: none;
         border: none;
       }
@@ -45,24 +51,110 @@
   </head>
   <body>
     <div class="container">
-      <button class="left">left</button>
-      <button class="right">right</button>
+      <button class="left">Enter FullScreen</button>
+      <label for="pet-select">Choose a height for the navbar:</label>
+      <select name="heights" id="height-select">
+        <option value="54">54px</option>
+        <option value="64">64px</option>
+        <option value="74">74px</option>
+        <option value="84">84px</option>
+        <option value="94">94px</option>
+        <option value="104">104px</option>
+        <option value="114">114px</option>
+        <option value="124">124px</option>
+      </select>
+      <button class="right">Exit FullScreen</button>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae reiciendis doloremque natus qui facere non, sequi blanditiis totam. Beatae.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum
+      perferendis quo a sed vero, aliquam, laboriosam saepe et repudiandae
+      reiciendis doloremque natus qui facere non, sequi blanditiis totam.
+      Beatae.
+    </p>
     <script>
       function init() {
         function onMouseEnterHandler(e) {
@@ -77,7 +169,7 @@
         const $container = document.querySelector('.container')
         const debounedOnMouseLeaveHandler = _.debounce(
           onMouseLeaveHandler,
-          2000
+          3000
         )
         $container.addEventListener('mouseenter', onMouseEnterHandler)
         $container.addEventListener('mouseleave', debounedOnMouseLeaveHandler)
@@ -85,15 +177,21 @@
         bindButtons()
       }
       function bindButtons() {
-        document.querySelectorAll('button').forEach(item => {
+        document.querySelectorAll('button').forEach((item) => {
           item.addEventListener('click', (e) => {
             const text = e.target.innerText
-            if (text === 'left') {
-              console.log(`%cqin clicked item ${text}`,'color: red;')
+            if (text === 'Enter FullScreen') {
+              console.log(`%cqin clicked item ${text}`, 'color: red;')
+              document.documentElement.requestFullscreen()
             } else {
-              console.log(`%cqin clicked item ${text}`,'color: blue;')
+              console.log(`%cqin clicked item ${text}`, 'color: blue;')
+              document.exitFullscreen()
             }
           })
+        })
+        document.querySelector('#height-select').addEventListener('change', (e) => {
+          console.log(e.target.value)
+          document.documentElement.style.setProperty('--nav-bar-height', `${e.target.value}px`)
         })
       }
       init()
